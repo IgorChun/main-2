@@ -5,15 +5,20 @@ public class Main {
         int replenishmentAmount = 1100;
         int amount;
         int bonus = 100;
+        int bonusRubles;
+        int totalAmount;
 
         amount = replenishmentAmount + initialAccount;
+        bonusRubles = replenishmentAmount / bonus;
 
         if (replenishmentAmount > 1000) {
-            amount = amount + replenishmentAmount / bonus;
-
-
+            totalAmount = amount + bonusRubles;
+        } else {
+            totalAmount = amount;
+            bonusRubles = 0;
         }
-        System.out.println("Итоговая сумма на счету - " + amount);
+        System.out.println("Итоговая сумма на счету - " + totalAmount);
+        System.out.println("Количество бонусных рублей - " + bonusRubles);
 
     }
-    }
+}
